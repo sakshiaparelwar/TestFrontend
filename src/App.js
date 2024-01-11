@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import SignIn from "./pages/SignIn";
+import Login from "./pages/Login";
+import Viewdata from "./pages/Viewdata";
+import Departments from "./pages/Departments";
+import CreateDepartment from "./pages/CreateDepartment";
+import Editdepartment from "./pages/Editdepartment";
+import { Authorized } from "./middleware/auth";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<SignIn />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/view"
+            element={
+              <Authorized>
+                <Viewdata />
+              </Authorized>
+            }
+          />
+
+          <Route path="/createdep" element={<CreateDepartment />} />
+          <Route
+            path="/departments"
+            element={
+              <Authorized>
+                <Departments />
+              </Authorized>
+            }
+          />
+          <Route path="/edit-department/:id" element={<Editdepartment />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
