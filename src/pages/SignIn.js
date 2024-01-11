@@ -13,7 +13,8 @@ function SignIn() {
   const navigate = useNavigate();
   let handleSubmit = (event) => {
     console.log(name, phone, location, email, department);
-    const url = "http://localhost:5001/employees/create-employee";
+    const url =
+      "https://testbackend-31vt.onrender.com/employees/create-employee";
     const obj = { name, phone, location, email, password, department };
     axios
       .post(url, obj)

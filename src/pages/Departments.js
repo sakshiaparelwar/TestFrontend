@@ -9,7 +9,7 @@ function Departments() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5001/departments", {
+      .get("https://testbackend-31vt.onrender.com/departments", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -21,12 +21,12 @@ function Departments() {
   const handleDelete = (departmentId) => {
     axios
       .delete(
-        `http://localhost:5001/departments/delete-department/${departmentId}`
+        `https://testbackend-31vt.onrender.com/departments/delete-department/${departmentId}`
       )
       .then((response) => {
         alert("Employee deleted successfully");
         axios
-          .get("http://localhost:5001/departments", {
+          .get("https://testbackend-31vt.onrender.com/departments", {
             headers: {
               Authorization: `Bearer ${token}`,
             },

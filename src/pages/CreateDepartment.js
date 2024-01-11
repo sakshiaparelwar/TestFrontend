@@ -8,7 +8,8 @@ function CreateDepartment() {
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     // console.log(departmentname, employeename);
-    const url = "http://localhost:5001/departments/create-department";
+    const url =
+      "https://testbackend-31vt.onrender.com/departments/create-department";
     const obj = { departmentname, employeename };
     axios
       .post(url, obj)

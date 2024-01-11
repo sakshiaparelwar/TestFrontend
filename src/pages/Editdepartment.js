@@ -10,7 +10,9 @@ function Editdepartment() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5001/departments/update-employee/${obj.id}`)
+      .get(
+        `https://testbackend-31vt.onrender.com/departments/update-employee/${obj.id}`
+      )
       .then((res) => {
         if (res.status === 200) {
           setDepartmentname(res.data.departmentname);
@@ -28,7 +30,7 @@ function Editdepartment() {
     const newData = { departmentname, employeename };
     axios
       .put(
-        `http://localhost:5001/departments/update-employee/${obj.id}`,
+        `https://testbackend-31vt.onrender.com/departments/update-employee/${obj.id}`,
         newData
       )
       .then((res) => {

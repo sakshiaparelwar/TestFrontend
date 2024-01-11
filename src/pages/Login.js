@@ -12,7 +12,7 @@ function Login() {
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     // console.log(name, phone, email, password, department);
-    const url = "http://localhost:5001/employees/log-in";
+    const url = "https://testbackend-31vt.onrender.com/employees/log-in";
     const obj = { name, phone, email, password, department };
     axios
       .post(url, obj)

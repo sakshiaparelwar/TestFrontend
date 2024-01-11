@@ -10,7 +10,7 @@ function Viewdata() {
   useEffect(() => {
     const token = localStorage.getItem("Token");
     axios
-      .get("http://localhost:5001/employees", {
+      .get("https://testbackend-31vt.onrender.com/employees", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
